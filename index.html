@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator with Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <p style="text-align: center; font-size: 30px;"><b>Working Calculator + Feedback form</b> ( to show JS form validation) </p>
+  <div class="page-wrapper">
+    <div class="calculator-form-container">
+      <div class="calculator-container">
+        <div id="calculator">
+          <div class="calculator-body">
+            <div class="solar-panel"></div>
+            <div class="display-container">
+              <input id="display" type="text" value="0" readonly>
+            </div>
+            <div id="operations">
+              <div><button id="w" value="7">7</button></div>
+              <div><button id="w" value="8">8</button></div>
+              <div><button id="w" value="9">9</button></div>
+              <div><button id="we" value="/">/</button></div>
+
+              <div><button id="w" value="4">4</button></div>
+              <div><button id="w" value="5">5</button></div>
+              <div><button id="w" value="6">6</button></div>
+              <div><button id="we" value="*">×</button></div>
+
+              <div><button id="w" value="1">1</button></div>
+              <div><button id="w" value="2">2</button></div>
+              <div><button id="w" value="3">3</button></div>
+              <div><button id="we" value="-">−</button></div>
+
+              <div><button id="w" value="0">0</button></div>
+              <div><button id="w" value=".">.</button></div>
+              <div><button id="wa" value="=">=</button></div>
+              <div><button id="we" value="+">+</button></div>
+
+              <div><button id="clear" value="C">C</button></div>
+            </div>
+            <div class="brand"><b>SHARAN DEEPAK 24CSB0B67</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <h2>Feedback Form</h2>
+        <p>Tell us what you think about the calculator</p>
+        <form id="feedbackForm" novalidate>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Your name" required minlength="3">
+            <span class="error" id="nameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Your email" required>
+            <span class="error" id="emailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="rating">Rating:</label>
+            <select id="rating" required>
+              <option style="background-color: black;" value="">Select rating</option>
+              <option style="background-color: black;" value="5">Excellent (5)</option>
+              <option style="background-color: black;" value="4">Very Good (4)</option>
+              <option style="background-color: black;" value="3">Good (3)</option>
+              <option style="background-color: black;" value="2">Fair (2)</option>
+              <option style="background-color: black" value="1">Poor (1)</option>
+            </select>
+            <span class="error" id="ratingError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Feedback:</label>
+            <textarea id="message" placeholder="Your feedback" rows="4" required minlength="10" maxlength="200"></textarea>
+            <span class="error" id="messageError"></span>
+            <div class="character-counter">0/200</div>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="subscribe" name="subscribe">
+            <label for="subscribe">Subscribe to newsletter</label>
+          </div>
+
+          <div class="button-group">
+            <button type="submit" id="submitBtn">Submit</button>
+            <button type="reset" id="resetBtn">Reset</button>
+          </div>
+        </form>
+        <div id="formSuccess" class="success-message hidden">
+          Thank you for your feedback!
+        </div>
+      </div>
+    </div>
+
+    <div class="sticky-feature">
+      <div class="sticky-image">
+        <img src="mathematician.png" alt="Sticky Math Symbol" class="math-symbol">
+      </div>
+      <div class="feature-text">
+        <h3>This is a Sticky image</h3>
+        <p>Try going down</p>
+        <p>Scroll down to see how the image stays with you....</p>
+      </div>
+    </div>
+
+    <div class="image-gallery">
+      <h2>see Filter properties,image masking,image shapes in action:</h2>
+      <div class="image-grid">
+        <div class="image-item">
+          <div class="image-container rounded">
+            <img src="aryabhata.png" alt="Ancient Mathematics" class="gallery-image">
+            <div class="image-overlay">Ancient Math</div>
+          </div>
+        </div>
+        <div class="image-item">
+          <div class="image-container circle">
+            <img src="olddd.jpg" alt="Renaissance Mathematics" class="gallery-image">
+            <div class="image-overlay">Renaissance</div>
+          </div>
+        </div>
+        <div class="image-item">
+          <div class="image-container hexagon">
+            <img src="modern.jpeg" alt="Modern Mathematics" class="gallery-image">
+            <div class="image-overlay">Modern</div>
+          </div>
+        </div>
+        <div class="image-item">
+          <div class="image-container triangle">
+            <img src="future.png" alt="Future of Mathematics" class="gallery-image">
+            <div class="image-overlay">Future</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="description-section">
+      <h2>See Image grid in action:</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <h3>Scientific Functions</h3>
+          <p>Perform complex calculations with ease.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Memory Storage</h3>
+          <p>Save and recall important values.</p>
+        </div>
+        <div class="feature-item">
+          <h3>History Tracking</h3>
+          <p>Review your previous calculations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    :root {
+      --primary-color: #3a6073;
+      --secondary-color: #16222a;
+      --button-blue: #5acbe4;  
+      --button-blue-dark: #63cad4;  
+      --button-yellow: #ffda55;  
+      --button-yellow-dark: #ffc107;  
+      --button-red: #ff5555;  
+      --button-red-dark: #ff3333;  
+      --display-color: rgb(209, 233, 198);  
+      --body-bg: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      --shadow-dark: rgba(0,0,0,0.25);  
+      --shadow-light: rgba(255,255,255,0.15);  
+      --form-bg: rgba(255, 255, 255, 0.08);
+      --form-border: rgba(255, 255, 255, 0.1);
+      --input-bg: rgba(255, 255, 255, 0.05);
+      --error-color: #ff6b6b;
+      --success-color: #6bff7d;
+    }
+
+    body {
+      background: var(--body-bg);
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #eee;
+    }
+
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .calculator-form-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: 60px;
+    }
+
+    .calculator-container {
+      perspective: 800px;
+      flex: 0 1 320px;
+    }
+
+    .form-container {
+      flex: 0 1 400px;
+      background: var(--form-bg);
+      border-radius: 18px;
+      border: 1px solid var(--form-border);
+      padding: 25px;
+      box-shadow: 0 8px 20px var(--shadow-dark);
+      backdrop-filter: blur(10px);
+    }
+
+    .form-container h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .form-container p {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: 1px solid var(--form-border);
+      background: var(--input-bg);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      transition: all 0.3s;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--button-blue);
+      box-shadow: 0 0 0 2px rgba(90, 203, 228, 0.3);
+    }
+
+    .form-group input:invalid:focus,
+    .form-group select:invalid:focus,
+    .form-group textarea:invalid:focus {
+      border-color: var(--error-color);
+      box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.3);
+    }
+
+    .form-group.checkbox-group {
+      display: flex;
+      align-items: center;
+    }
+
+    .form-group.checkbox-group input {
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .character-counter {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    .error {
+      color: var(--error-color);
+      font-size: 12px;
+      margin-top: 5px;
+      display: block;
+      height: 15px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+    }
+
+    .form-container button {
+      flex: 1;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .form-container button[type="submit"] {
+      background: linear-gradient(to bottom, var(--button-blue), var(--button-blue-dark));
+      color: #333;
+    }
+
+    .form-container button[type="reset"] {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .form-container button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-container button:active {
+      transform: translateY(1px);
+    }
+
+    .success-message {
+      background: rgba(107, 255, 125, 0.2);
+      border: 1px solid var(--success-color);
+      color: var(--success-color);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 20px;
+      transition: opacity 0.3s;
+    }
+
+    .hidden {
+      display: none;
+      opacity: 0;
+    }
+
+    #calculator {
+      width: 320px;
+      transform: rotateX(3deg);  
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease;
+    }
+
+    #calculator:hover {
+      transform: rotateX(0deg);
+    }
+
+    .calculator-body {
+      background: linear-gradient(to bottom, #5c5c5c, #333333);  
+      border-radius: 18px;  
+      padding: 18px;  
+      box-shadow: 
+        0 8px 20px var(--shadow-dark),  
+        inset 0 1px 4px var(--shadow-light),  
+        inset 0 -1px 4px rgba(0,0,0,0.3);  
+      position: relative;
+      border: 2px solid #222;
+    }
+
+    .display-container {
+      background: #222;
+      padding: 8px;  
+      border-radius: 8px;  
+      margin-bottom: 15px;
+      box-shadow: 
+        inset 0 2px 4px rgba(0,0,0,0.6),  
+        0 1px 2px var(--shadow-light);
+    }
+
+    #display {
+      background: var(--display-color);
+      border: none;
+      border-radius: 4px;  
+      text-align: right;
+      font-size: 28px;  
+      width: 100%;
+      color: #333;
+      padding: 8px;  
+      font-family: 'Orbitron', monospace;
+      letter-spacing: 1px;
+      box-sizing: border-box;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.08);  
+      text-shadow: 0 1px 1px rgba(0,0,0,0.08);  
+    }
+
+    #operations {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 8px;  
+      margin-top: 5px;
+    }
+
+    button {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 20px;  
+      height: 55px;  
+      border-radius: 8px;  
+      border: none;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.1s;
+      user-select: none;
+      box-shadow: 
+        0 3px 0 #222,  
+        0 4px 4px var(--shadow-dark);  
+      text-shadow: 0 -1px 1px rgba(0,0,0,0.15);  
+    }
+
+    #w {
+      background: linear-gradient(to bottom, var(--button-blue), var(--button-blue-dark));
+      width: 100%;
+      color: #333;
+    }
+
+    #we {
+      background: linear-gradient(to bottom, var(--button-yellow), var(--button-yellow-dark));
+      width: 100%;
+      color: #333;
+    }
+
+    #wa {
+      background: linear-gradient(to bottom, #4cafd3, #2c96c3);  
+      grid-column: span 2;
+      width: 100%;
+      color: white;
+    }
+
+    #clear {
+      width: 100%;
+      background: linear-gradient(to bottom, var(--button-red), var(--button-red-dark));
+      grid-column: span 4;
+      color: white;
+    }
+
+    button:hover {
+      filter: brightness(1.05);  
+    }
+
+    button:active {
+      transform: translateY(2px);  
+      box-shadow: 
+        0 1px 0 #222,
+        0 1px 2px var(--shadow-dark);  
+    }
+
+    .brand {
+      text-align: center;
+      font-size: 11px;  
+      color: #999;  
+      margin-top: 15px;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.4);  
+      letter-spacing: 1.5px;  
+    }
+
+    .image-gallery {
+      width: 100%;
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .image-gallery h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: white;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .image-item {
+      flex: 0 0 calc(25% - 30px);
+      min-width: 250px;
+    }
+
+    .image-container {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: all 0.5s ease;
+      object-fit: cover;
+    }
+
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .image-container:hover .image-overlay {
+      transform: translateY(0);
+    }
+
+    .image-container:hover .gallery-image {
+      transform: scale(1.1);
+      filter: brightness(0.8) blur(2px);
+    }
+
+    .rounded {
+      border-radius: 15px;
+    }
+
+    .circle {
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+    }
+
+    .hexagon {
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    }
+
+    .triangle {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    .sticky-feature {
+      display: flex;
+      width: 100%;
+      max-width: 900px;
+      min-height: 300px;
+      margin: 60px auto;
+      padding: 20px;
+      position: relative;
+    }
+
+    .sticky-image {
+      position: sticky;
+      top: 20px;
+      width: 200px;
+      height: 200px;
+    }
+
+    .math-symbol {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4)) sepia(0.3);
+    }
+
+    .feature-text {
+      flex: 1;
+      padding: 0 30px;
+    }
+
+    .description-section {
+      width: 100%;
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .description-section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .feature-item {
+      flex: 1 0 300px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    @media (max-width: 768px) {
+      .calculator-form-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .sticky-feature {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .sticky-image {
+        position: relative;
+        top: 0;
+        margin-bottom: 20px;
+      }
+
+      .image-item {
+        flex: 0 0 calc(50% - 30px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .image-item {
+        flex: 0 0 100%;
+      }
+    }
+  </style>
+
+  <script>
+    const display = document.getElementById("display");
+    let currentInput = "";
+
+    document.querySelectorAll('#operations button').forEach(button => {
+      button.addEventListener("click", () => {
+        const value = button.value;
+
+        if (value === 'C') {
+          currentInput = "";
+          display.value = "0";
+        }
+        else if (value === '=') {
+          try {
+            const expression = currentInput.replace(/×/g, '*');
+            currentInput = eval(expression).toString();
+            if (currentInput === "Infinity" || currentInput === "NaN") {
+              throw new Error("Invalid calculation");
+            }
+            display.value = Number(parseFloat(currentInput).toFixed(8)).toString();
+          }
+          catch (error) {
+            display.value = "Error";
+            setTimeout(() => {
+              display.value = "0";
+              currentInput = "";
+            }, 1000);
+          }
+        }
+        else {
+          if (display.value === "0" && value !== ".") {
+            currentInput = value;
+          } else if (display.value === "Error") {
+            currentInput = value;
+          } else {
+            currentInput += value;
+          }
+          display.value = currentInput;
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      const key = event.key;
+
+      if (/[0-9.+\-*/]/.test(key)) {
+        const buttonValue = key === '*' ? '*' : key;
+        document.querySelector(`button[value="${buttonValue}"]`)?.click();
+      } else if (key === 'Enter') {
+        document.querySelector('button[value="="]').click();
+      } else if (key === 'Escape' || key === 'Delete' || key === 'Backspace') {
+        document.querySelector('button[value="C"]').click();
+      }
+    });
+
+    const form = document.getElementById('feedbackForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const ratingInput = document.getElementById('rating');
+    const messageInput = document.getElementById('message');
+    const resetButton = document.getElementById('resetBtn');
+    const formSuccess = document.getElementById('formSuccess');
+
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const ratingError = document.getElementById('ratingError');
+    const messageError = document.getElementById('messageError');
+
+    const characterCounter = document.querySelector('.character-counter');
+
+    messageInput.addEventListener('input', () => {
+      const currentLength = messageInput.value.length;
+      characterCounter.textContent = `${currentLength}/200`;
+
+      if (currentLength > 180) {
+        characterCounter.style.color = '#ffaa00';
+      } else if (currentLength >= 200) {
+        characterCounter.style.color = 'var(--error-color)';
+      } else {
+        characterCounter.style.color = '#aaa';
+      }
+    });
+
+    nameInput.addEventListener('input', () => {
+      if (nameInput.value.length < 3) {
+        nameError.textContent = 'Name must be at least 3 characters';
+      } else {
+        nameError.textContent = '';
+      }
+    });
+
+    emailInput.addEventListener('input', () => {
+      if (!validateEmail(emailInput.value)) {
+        emailError.textContent = 'Please enter a valid email';
+      } else {
+        emailError.textContent = '';
+      }
+    });
+
+    ratingInput.addEventListener('change', () => {
+      if (ratingInput.value === '') {
+        ratingError.textContent = 'Please select a rating';
+      } else {
+        ratingError.textContent = '';
+      }
+    });
+
+    messageInput.addEventListener('input', () => {
+      if (messageInput.value.length < 10) {
+        messageError.textContent = 'Message must be at least 10 characters';
+      } else {
+        messageError.textContent = '';
+      }
+    });
+
+    function validateEmail(email) {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      nameError.textContent = '';
+      emailError.textContent = '';
+      ratingError.textContent = '';
+      messageError.textContent = '';
+
+      let isValid = true;
+
+      if (nameInput.value.length < 3) {
+        nameError.textContent = 'Name must be at least 3 characters';
+        isValid = false;
+      }
+
+      if (!validateEmail(emailInput.value)) {
+        emailError.textContent = 'Please enter a valid email';
+        isValid = false;
+      }
+
+      if (ratingInput.value === '') {
+        ratingError.textContent = 'Please select a rating';
+        isValid = false;
+      }
+
+      if (messageInput.value.length < 10) {
+        messageError.textContent = 'Message must be at least 10 characters';
+        isValid = false;
+      }
+
+      if (isValid) {
+
+        form.style.opacity = '0.5';
+        form.style.pointerEvents = 'none';
+
+        setTimeout(() => {
+          form.style.display = 'none';
+          formSuccess.classList.remove('hidden');
+          formSuccess.style.opacity = '1';
+
+          form.reset();
+          characterCounter.textContent = '0/200';
+        }, 1000);
+      }
+    });
+
+    resetButton.addEventListener('click', () => {
+
+      nameError.textContent = '';
+      emailError.textContent = '';
+      ratingError.textContent = '';
+      messageError.textContent = '';
+
+      characterCounter.textContent = '0/200';
+      characterCounter.style.color = '#aaa';
+    });
+  </script>
+</body>
+</html>
